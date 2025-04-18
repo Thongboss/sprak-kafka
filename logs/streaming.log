@@ -1,0 +1,379 @@
+2025-04-17 16:11:06 [com.example.StreamingApp.main()] INFO  org.apache.spark.SparkContext - Running Spark version 3.4.0
+2025-04-17 16:11:06 [com.example.StreamingApp.main()] WARN  org.apache.hadoop.util.Shell - Did not find winutils.exe: {}
+java.io.FileNotFoundException: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset. -see https://wiki.apache.org/hadoop/WindowsProblems
+	at org.apache.hadoop.util.Shell.fileNotFoundException(Shell.java:547)
+	at org.apache.hadoop.util.Shell.getHadoopHomeDir(Shell.java:568)
+	at org.apache.hadoop.util.Shell.getQualifiedBin(Shell.java:591)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:688)
+	at org.apache.hadoop.util.StringUtils.<clinit>(StringUtils.java:79)
+	at org.apache.hadoop.conf.Configuration.getBoolean(Configuration.java:1712)
+	at org.apache.hadoop.security.SecurityUtil.setConfigurationInternal(SecurityUtil.java:99)
+	at org.apache.hadoop.security.SecurityUtil.<clinit>(SecurityUtil.java:88)
+	at org.apache.hadoop.security.UserGroupInformation.initialize(UserGroupInformation.java:312)
+	at org.apache.hadoop.security.UserGroupInformation.ensureInitialized(UserGroupInformation.java:300)
+	at org.apache.hadoop.security.UserGroupInformation.getCurrentUser(UserGroupInformation.java:575)
+	at org.apache.spark.util.Utils$.$anonfun$getCurrentUserName$1(Utils.scala:2583)
+	at scala.Option.getOrElse(Option.scala:189)
+	at org.apache.spark.util.Utils$.getCurrentUserName(Utils.scala:2583)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:321)
+	at org.apache.spark.SparkContext$.getOrCreate(SparkContext.scala:2740)
+	at org.apache.spark.sql.SparkSession$Builder.$anonfun$getOrCreate$2(SparkSession.scala:1026)
+	at scala.Option.getOrElse(Option.scala:189)
+	at org.apache.spark.sql.SparkSession$Builder.getOrCreate(SparkSession.scala:1020)
+	at com.example.StreamingApp.main(StreamingApp.java:17)
+	at org.codehaus.mojo.exec.ExecJavaMojo$1.run(ExecJavaMojo.java:279)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset.
+	at org.apache.hadoop.util.Shell.checkHadoopHomeInner(Shell.java:467)
+	at org.apache.hadoop.util.Shell.checkHadoopHome(Shell.java:438)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:515)
+	... 18 common frames omitted
+2025-04-17 16:11:06 [com.example.StreamingApp.main()] WARN  o.a.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2025-04-17 16:11:06 [com.example.StreamingApp.main()] INFO  o.a.spark.resource.ResourceUtils - ==============================================================
+2025-04-17 16:11:06 [com.example.StreamingApp.main()] INFO  o.a.spark.resource.ResourceUtils - No custom resources configured for spark.driver.
+2025-04-17 16:11:06 [com.example.StreamingApp.main()] INFO  o.a.spark.resource.ResourceUtils - ==============================================================
+2025-04-17 16:11:06 [com.example.StreamingApp.main()] INFO  org.apache.spark.SparkContext - Submitted application: KafkaSparkStreaming
+2025-04-17 16:11:06 [com.example.StreamingApp.main()] INFO  o.a.spark.resource.ResourceProfile - Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+2025-04-17 16:11:06 [com.example.StreamingApp.main()] INFO  o.a.spark.resource.ResourceProfile - Limiting resource is cpu
+2025-04-17 16:11:06 [com.example.StreamingApp.main()] INFO  o.a.s.r.ResourceProfileManager - Added ResourceProfile id: 0
+2025-04-17 16:11:06 [com.example.StreamingApp.main()] INFO  org.apache.spark.SecurityManager - Changing view acls to: INFOER-HPD
+2025-04-17 16:11:06 [com.example.StreamingApp.main()] INFO  org.apache.spark.SecurityManager - Changing modify acls to: INFOER-HPD
+2025-04-17 16:11:06 [com.example.StreamingApp.main()] INFO  org.apache.spark.SecurityManager - Changing view acls groups to: 
+2025-04-17 16:11:06 [com.example.StreamingApp.main()] INFO  org.apache.spark.SecurityManager - Changing modify acls groups to: 
+2025-04-17 16:11:06 [com.example.StreamingApp.main()] INFO  org.apache.spark.SecurityManager - SecurityManager: authentication disabled; ui acls disabled; users with view permissions: INFOER-HPD; groups with view permissions: EMPTY; users with modify permissions: INFOER-HPD; groups with modify permissions: EMPTY
+2025-04-17 16:11:07 [com.example.StreamingApp.main()] INFO  org.apache.spark.util.Utils - Successfully started service 'sparkDriver' on port 60435.
+2025-04-17 16:11:07 [com.example.StreamingApp.main()] INFO  org.apache.spark.SparkEnv - Registering MapOutputTracker
+2025-04-17 16:11:07 [com.example.StreamingApp.main()] INFO  org.apache.spark.SparkEnv - Registering BlockManagerMaster
+2025-04-17 16:11:07 [com.example.StreamingApp.main()] INFO  o.a.s.s.BlockManagerMasterEndpoint - Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+2025-04-17 16:11:07 [com.example.StreamingApp.main()] INFO  o.a.s.s.BlockManagerMasterEndpoint - BlockManagerMasterEndpoint up
+2025-04-17 16:11:07 [com.example.StreamingApp.main()] INFO  org.apache.spark.SparkEnv - Registering BlockManagerMasterHeartbeat
+2025-04-17 16:11:07 [com.example.StreamingApp.main()] INFO  o.a.spark.storage.DiskBlockManager - Created local directory at C:\Users\INFOER-HPD\AppData\Local\Temp\blockmgr-bf30166d-aa50-4eae-a6f8-89e65854d16f
+2025-04-17 16:11:07 [com.example.StreamingApp.main()] INFO  o.a.spark.storage.memory.MemoryStore - MemoryStore started with capacity 1963.2 MiB
+2025-04-17 16:11:07 [com.example.StreamingApp.main()] INFO  org.apache.spark.SparkEnv - Registering OutputCommitCoordinator
+2025-04-17 16:11:07 [com.example.StreamingApp.main()] INFO  org.sparkproject.jetty.util.log - Logging initialized @3847ms to org.sparkproject.jetty.util.log.Slf4jLog
+2025-04-17 16:11:07 [com.example.StreamingApp.main()] INFO  org.apache.spark.ui.JettyUtils - Start Jetty 0.0.0.0:4040 for SparkUI
+2025-04-17 16:11:07 [com.example.StreamingApp.main()] INFO  org.sparkproject.jetty.server.Server - jetty-9.4.50.v20221201; built: 2022-12-01T22:07:03.915Z; git: da9a0b30691a45daf90a9f17b5defa2f1434f882; jvm 1.8.0_202-b08
+2025-04-17 16:11:07 [com.example.StreamingApp.main()] INFO  org.sparkproject.jetty.server.Server - Started @3967ms
+2025-04-17 16:11:07 [com.example.StreamingApp.main()] INFO  o.s.jetty.server.AbstractConnector - Started ServerConnector@920ddeb{HTTP/1.1, (http/1.1)}{0.0.0.0:4040}
+2025-04-17 16:11:07 [com.example.StreamingApp.main()] INFO  org.apache.spark.util.Utils - Successfully started service 'SparkUI' on port 4040.
+2025-04-17 16:11:07 [com.example.StreamingApp.main()] INFO  o.s.j.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@170ffb26{/,null,AVAILABLE,@Spark}
+2025-04-17 16:11:07 [com.example.StreamingApp.main()] INFO  org.apache.spark.executor.Executor - Starting executor ID driver on host DESKTOP-HC10M8M.mshome.net
+2025-04-17 16:11:07 [com.example.StreamingApp.main()] INFO  org.apache.spark.executor.Executor - Starting executor with user classpath (userClassPathFirst = false): ''
+2025-04-17 16:11:07 [com.example.StreamingApp.main()] INFO  org.apache.spark.util.Utils - Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 60482.
+2025-04-17 16:11:07 [com.example.StreamingApp.main()] INFO  o.a.s.n.n.NettyBlockTransferService - Server created on DESKTOP-HC10M8M.mshome.net:60482
+2025-04-17 16:11:07 [com.example.StreamingApp.main()] INFO  o.apache.spark.storage.BlockManager - Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+2025-04-17 16:11:07 [com.example.StreamingApp.main()] INFO  o.a.spark.storage.BlockManagerMaster - Registering BlockManager BlockManagerId(driver, DESKTOP-HC10M8M.mshome.net, 60482, None)
+2025-04-17 16:11:07 [dispatcher-BlockManagerMaster] INFO  o.a.s.s.BlockManagerMasterEndpoint - Registering block manager DESKTOP-HC10M8M.mshome.net:60482 with 1963.2 MiB RAM, BlockManagerId(driver, DESKTOP-HC10M8M.mshome.net, 60482, None)
+2025-04-17 16:11:07 [com.example.StreamingApp.main()] INFO  o.a.spark.storage.BlockManagerMaster - Registered BlockManager BlockManagerId(driver, DESKTOP-HC10M8M.mshome.net, 60482, None)
+2025-04-17 16:11:07 [com.example.StreamingApp.main()] INFO  o.apache.spark.storage.BlockManager - Initialized BlockManager: BlockManagerId(driver, DESKTOP-HC10M8M.mshome.net, 60482, None)
+2025-04-17 16:11:08 [com.example.StreamingApp.main()] INFO  o.s.j.server.handler.ContextHandler - Stopped o.s.j.s.ServletContextHandler@170ffb26{/,null,STOPPED,@Spark}
+2025-04-17 16:11:08 [com.example.StreamingApp.main()] INFO  o.s.j.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@3a1ac811{/jobs,null,AVAILABLE,@Spark}
+2025-04-17 16:11:08 [com.example.StreamingApp.main()] INFO  o.s.j.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@9f77059{/jobs/json,null,AVAILABLE,@Spark}
+2025-04-17 16:11:08 [com.example.StreamingApp.main()] INFO  o.s.j.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@5f9d6624{/jobs/job,null,AVAILABLE,@Spark}
+2025-04-17 16:11:08 [com.example.StreamingApp.main()] INFO  o.s.j.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@4bf3979a{/jobs/job/json,null,AVAILABLE,@Spark}
+2025-04-17 16:11:08 [com.example.StreamingApp.main()] INFO  o.s.j.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@56d8baa{/stages,null,AVAILABLE,@Spark}
+2025-04-17 16:11:08 [com.example.StreamingApp.main()] INFO  o.s.j.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@6a16df4d{/stages/json,null,AVAILABLE,@Spark}
+2025-04-17 16:11:08 [com.example.StreamingApp.main()] INFO  o.s.j.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@eebbfbc{/stages/stage,null,AVAILABLE,@Spark}
+2025-04-17 16:11:08 [com.example.StreamingApp.main()] INFO  o.s.j.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@28bfe8a7{/stages/stage/json,null,AVAILABLE,@Spark}
+2025-04-17 16:11:08 [com.example.StreamingApp.main()] INFO  o.s.j.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@76dc9d6b{/stages/pool,null,AVAILABLE,@Spark}
+2025-04-17 16:11:08 [com.example.StreamingApp.main()] INFO  o.s.j.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@5cede761{/stages/pool/json,null,AVAILABLE,@Spark}
+2025-04-17 16:11:08 [com.example.StreamingApp.main()] INFO  o.s.j.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@253b9812{/storage,null,AVAILABLE,@Spark}
+2025-04-17 16:11:08 [com.example.StreamingApp.main()] INFO  o.s.j.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@1b703f6b{/storage/json,null,AVAILABLE,@Spark}
+2025-04-17 16:11:08 [com.example.StreamingApp.main()] INFO  o.s.j.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@264abcbd{/storage/rdd,null,AVAILABLE,@Spark}
+2025-04-17 16:11:08 [com.example.StreamingApp.main()] INFO  o.s.j.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@3cd1f16c{/storage/rdd/json,null,AVAILABLE,@Spark}
+2025-04-17 16:11:08 [com.example.StreamingApp.main()] INFO  o.s.j.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@52fa5751{/environment,null,AVAILABLE,@Spark}
+2025-04-17 16:11:08 [com.example.StreamingApp.main()] INFO  o.s.j.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@4738cc18{/environment/json,null,AVAILABLE,@Spark}
+2025-04-17 16:11:08 [com.example.StreamingApp.main()] INFO  o.s.j.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@538e7b4c{/executors,null,AVAILABLE,@Spark}
+2025-04-17 16:11:08 [com.example.StreamingApp.main()] INFO  o.s.j.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@2eb15b5a{/executors/json,null,AVAILABLE,@Spark}
+2025-04-17 16:11:08 [com.example.StreamingApp.main()] INFO  o.s.j.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@2ada1d03{/executors/threadDump,null,AVAILABLE,@Spark}
+2025-04-17 16:11:08 [com.example.StreamingApp.main()] INFO  o.s.j.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@61c7df09{/executors/threadDump/json,null,AVAILABLE,@Spark}
+2025-04-17 16:11:08 [com.example.StreamingApp.main()] INFO  o.s.j.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@63c10acc{/static,null,AVAILABLE,@Spark}
+2025-04-17 16:11:08 [com.example.StreamingApp.main()] INFO  o.s.j.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@70412af0{/,null,AVAILABLE,@Spark}
+2025-04-17 16:11:08 [com.example.StreamingApp.main()] INFO  o.s.j.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@53001573{/api,null,AVAILABLE,@Spark}
+2025-04-17 16:11:08 [com.example.StreamingApp.main()] INFO  o.s.j.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@5f796d63{/jobs/job/kill,null,AVAILABLE,@Spark}
+2025-04-17 16:11:08 [com.example.StreamingApp.main()] INFO  o.s.j.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@797b68de{/stages/stage/kill,null,AVAILABLE,@Spark}
+2025-04-17 16:11:08 [com.example.StreamingApp.main()] INFO  o.s.j.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@52ef65fa{/metrics/json,null,AVAILABLE,@Spark}
+2025-04-17 16:11:08 [com.example.StreamingApp.main()] INFO  o.a.spark.sql.internal.SharedState - Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+2025-04-17 16:11:08 [com.example.StreamingApp.main()] INFO  o.a.spark.sql.internal.SharedState - Warehouse path is 'file:/D:/kafka/kafka-spark-streaming-final/spark-warehouse'.
+2025-04-17 16:11:08 [com.example.StreamingApp.main()] INFO  o.s.j.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@4300147a{/SQL,null,AVAILABLE,@Spark}
+2025-04-17 16:11:08 [com.example.StreamingApp.main()] INFO  o.s.j.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@14c5e3d0{/SQL/json,null,AVAILABLE,@Spark}
+2025-04-17 16:11:08 [com.example.StreamingApp.main()] INFO  o.s.j.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@2bfbf0c4{/SQL/execution,null,AVAILABLE,@Spark}
+2025-04-17 16:11:08 [com.example.StreamingApp.main()] INFO  o.s.j.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@4b529d32{/SQL/execution/json,null,AVAILABLE,@Spark}
+2025-04-17 16:11:08 [com.example.StreamingApp.main()] INFO  o.s.j.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@47553e61{/static/sql,null,AVAILABLE,@Spark}
+2025-04-17 16:11:11 [com.example.StreamingApp.main()] INFO  o.a.s.s.e.s.s.StateStoreCoordinatorRef - Registered StateStoreCoordinator endpoint
+2025-04-17 16:11:11 [com.example.StreamingApp.main()] INFO  o.s.j.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@5b334923{/StreamingQuery,null,AVAILABLE,@Spark}
+2025-04-17 16:11:11 [com.example.StreamingApp.main()] INFO  o.s.j.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@5f3132e5{/StreamingQuery/json,null,AVAILABLE,@Spark}
+2025-04-17 16:11:11 [com.example.StreamingApp.main()] INFO  o.s.j.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@653fc2de{/StreamingQuery/statistics,null,AVAILABLE,@Spark}
+2025-04-17 16:11:11 [com.example.StreamingApp.main()] INFO  o.s.j.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@3487ab73{/StreamingQuery/statistics/json,null,AVAILABLE,@Spark}
+2025-04-17 16:11:11 [com.example.StreamingApp.main()] INFO  o.s.j.server.handler.ContextHandler - Started o.s.j.s.ServletContextHandler@5dd3454e{/static/sql,null,AVAILABLE,@Spark}
+2025-04-17 16:11:11 [com.example.StreamingApp.main()] WARN  o.a.s.s.e.s.ResolveWriteToStream - Temporary checkpoint location created which is deleted normally when the query didn't fail: C:\Users\INFOER-HPD\AppData\Local\Temp\temporary-13d00d0d-edf4-4955-8a90-7e21789a30fa. If it's required to delete it under any circumstances, please set spark.sql.streaming.forceDeleteTempCheckpointLocation to true. Important to know deleting temp checkpoint folder is best effort.
+2025-04-17 16:11:11 [com.example.StreamingApp.main()] INFO  o.a.s.s.e.s.ResolveWriteToStream - Checkpoint root C:\Users\INFOER-HPD\AppData\Local\Temp\temporary-13d00d0d-edf4-4955-8a90-7e21789a30fa resolved to file:/C:/Users/INFOER-HPD/AppData/Local/Temp/temporary-13d00d0d-edf4-4955-8a90-7e21789a30fa.
+2025-04-17 16:11:11 [com.example.StreamingApp.main()] WARN  o.a.s.s.e.s.ResolveWriteToStream - spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+2025-04-17 16:11:11 [com.example.StreamingApp.main()] ERROR o.a.s.s.e.streaming.StreamMetadata - Error writing stream metadata StreamMetadata(bd7d147b-88fb-48e2-b4b3-6113f2850881) to file:/C:/Users/INFOER-HPD/AppData/Local/Temp/temporary-13d00d0d-edf4-4955-8a90-7e21789a30fa/metadata
+java.lang.RuntimeException: java.io.FileNotFoundException: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset. -see https://wiki.apache.org/hadoop/WindowsProblems
+	at org.apache.hadoop.util.Shell.getWinUtilsPath(Shell.java:735)
+	at org.apache.hadoop.util.Shell.getSetPermissionCommand(Shell.java:270)
+	at org.apache.hadoop.util.Shell.getSetPermissionCommand(Shell.java:286)
+	at org.apache.hadoop.fs.RawLocalFileSystem.setPermission(RawLocalFileSystem.java:978)
+	at org.apache.hadoop.fs.RawLocalFileSystem$LocalFSFileOutputStream.<init>(RawLocalFileSystem.java:324)
+	at org.apache.hadoop.fs.RawLocalFileSystem$LocalFSFileOutputStream.<init>(RawLocalFileSystem.java:294)
+	at org.apache.hadoop.fs.RawLocalFileSystem.createOutputStreamWithMode(RawLocalFileSystem.java:439)
+	at org.apache.hadoop.fs.RawLocalFileSystem.create(RawLocalFileSystem.java:428)
+	at org.apache.hadoop.fs.RawLocalFileSystem.create(RawLocalFileSystem.java:459)
+	at org.apache.hadoop.fs.FileSystem.primitiveCreate(FileSystem.java:1305)
+	at org.apache.hadoop.fs.DelegateToFileSystem.createInternal(DelegateToFileSystem.java:102)
+	at org.apache.hadoop.fs.ChecksumFs$ChecksumFSOutputSummer.<init>(ChecksumFs.java:353)
+	at org.apache.hadoop.fs.ChecksumFs.createInternal(ChecksumFs.java:400)
+	at org.apache.hadoop.fs.AbstractFileSystem.create(AbstractFileSystem.java:626)
+	at org.apache.hadoop.fs.FileContext$3.next(FileContext.java:701)
+	at org.apache.hadoop.fs.FileContext$3.next(FileContext.java:697)
+	at org.apache.hadoop.fs.FSLinkResolver.resolve(FSLinkResolver.java:90)
+	at org.apache.hadoop.fs.FileContext.create(FileContext.java:703)
+	at org.apache.spark.sql.execution.streaming.FileContextBasedCheckpointFileManager.createTempFile(CheckpointFileManager.scala:366)
+	at org.apache.spark.sql.execution.streaming.CheckpointFileManager$RenameBasedFSDataOutputStream.<init>(CheckpointFileManager.scala:140)
+	at org.apache.spark.sql.execution.streaming.CheckpointFileManager$RenameBasedFSDataOutputStream.<init>(CheckpointFileManager.scala:143)
+	at org.apache.spark.sql.execution.streaming.FileContextBasedCheckpointFileManager.createAtomic(CheckpointFileManager.scala:372)
+	at org.apache.spark.sql.execution.streaming.StreamMetadata$.write(StreamMetadata.scala:79)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.$anonfun$streamMetadata$1(StreamExecution.scala:139)
+	at scala.Option.getOrElse(Option.scala:189)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.<init>(StreamExecution.scala:137)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.<init>(MicroBatchExecution.scala:49)
+	at org.apache.spark.sql.streaming.StreamingQueryManager.createQuery(StreamingQueryManager.scala:295)
+	at org.apache.spark.sql.streaming.StreamingQueryManager.startQuery(StreamingQueryManager.scala:346)
+	at org.apache.spark.sql.streaming.DataStreamWriter.startQuery(DataStreamWriter.scala:430)
+	at org.apache.spark.sql.streaming.DataStreamWriter.startInternal(DataStreamWriter.scala:407)
+	at org.apache.spark.sql.streaming.DataStreamWriter.start(DataStreamWriter.scala:249)
+	at com.example.StreamingApp.main(StreamingApp.java:45)
+	at org.codehaus.mojo.exec.ExecJavaMojo$1.run(ExecJavaMojo.java:279)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.io.FileNotFoundException: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset. -see https://wiki.apache.org/hadoop/WindowsProblems
+	at org.apache.hadoop.util.Shell.fileNotFoundException(Shell.java:547)
+	at org.apache.hadoop.util.Shell.getHadoopHomeDir(Shell.java:568)
+	at org.apache.hadoop.util.Shell.getQualifiedBin(Shell.java:591)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:688)
+	at org.apache.hadoop.util.StringUtils.<clinit>(StringUtils.java:79)
+	at org.apache.hadoop.conf.Configuration.getBoolean(Configuration.java:1712)
+	at org.apache.hadoop.security.SecurityUtil.setConfigurationInternal(SecurityUtil.java:99)
+	at org.apache.hadoop.security.SecurityUtil.<clinit>(SecurityUtil.java:88)
+	at org.apache.hadoop.security.UserGroupInformation.initialize(UserGroupInformation.java:312)
+	at org.apache.hadoop.security.UserGroupInformation.ensureInitialized(UserGroupInformation.java:300)
+	at org.apache.hadoop.security.UserGroupInformation.getCurrentUser(UserGroupInformation.java:575)
+	at org.apache.spark.util.Utils$.$anonfun$getCurrentUserName$1(Utils.scala:2583)
+	at scala.Option.getOrElse(Option.scala:189)
+	at org.apache.spark.util.Utils$.getCurrentUserName(Utils.scala:2583)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:321)
+	at org.apache.spark.SparkContext$.getOrCreate(SparkContext.scala:2740)
+	at org.apache.spark.sql.SparkSession$Builder.$anonfun$getOrCreate$2(SparkSession.scala:1026)
+	at scala.Option.getOrElse(Option.scala:189)
+	at org.apache.spark.sql.SparkSession$Builder.getOrCreate(SparkSession.scala:1020)
+	at com.example.StreamingApp.main(StreamingApp.java:17)
+	... 2 common frames omitted
+Caused by: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset.
+	at org.apache.hadoop.util.Shell.checkHadoopHomeInner(Shell.java:467)
+	at org.apache.hadoop.util.Shell.checkHadoopHome(Shell.java:438)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:515)
+	... 18 common frames omitted
+2025-04-17 16:11:11 [spark-listener-group-shared] ERROR org.apache.spark.util.Utils - uncaught error in thread spark-listener-group-shared, stopping SparkContext
+java.lang.InterruptedException: null
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2048)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at org.apache.spark.scheduler.AsyncEventQueue.$anonfun$dispatch$1(AsyncEventQueue.scala:101)
+	at scala.runtime.java8.JFunction0$mcJ$sp.apply(JFunction0$mcJ$sp.java:23)
+	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:62)
+	at org.apache.spark.scheduler.AsyncEventQueue.org$apache$spark$scheduler$AsyncEventQueue$$dispatch(AsyncEventQueue.scala:100)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anon$2.$anonfun$run$1(AsyncEventQueue.scala:96)
+	at org.apache.spark.util.Utils$.tryOrStopSparkContext(Utils.scala:1471)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anon$2.run(AsyncEventQueue.scala:96)
+2025-04-17 16:11:11 [spark-listener-group-appStatus] ERROR org.apache.spark.util.Utils - uncaught error in thread spark-listener-group-appStatus, stopping SparkContext
+java.lang.InterruptedException: null
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2048)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at org.apache.spark.scheduler.AsyncEventQueue.$anonfun$dispatch$1(AsyncEventQueue.scala:110)
+	at scala.runtime.java8.JFunction0$mcJ$sp.apply(JFunction0$mcJ$sp.java:23)
+	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:62)
+	at org.apache.spark.scheduler.AsyncEventQueue.org$apache$spark$scheduler$AsyncEventQueue$$dispatch(AsyncEventQueue.scala:100)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anon$2.$anonfun$run$1(AsyncEventQueue.scala:96)
+	at org.apache.spark.util.Utils$.tryOrStopSparkContext(Utils.scala:1471)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anon$2.run(AsyncEventQueue.scala:96)
+2025-04-17 16:11:11 [spark-listener-group-executorManagement] ERROR org.apache.spark.util.Utils - uncaught error in thread spark-listener-group-executorManagement, stopping SparkContext
+java.lang.InterruptedException: null
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2048)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at org.apache.spark.scheduler.AsyncEventQueue.$anonfun$dispatch$1(AsyncEventQueue.scala:110)
+	at scala.runtime.java8.JFunction0$mcJ$sp.apply(JFunction0$mcJ$sp.java:23)
+	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:62)
+	at org.apache.spark.scheduler.AsyncEventQueue.org$apache$spark$scheduler$AsyncEventQueue$$dispatch(AsyncEventQueue.scala:100)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anon$2.$anonfun$run$1(AsyncEventQueue.scala:96)
+	at org.apache.spark.util.Utils$.tryOrStopSparkContext(Utils.scala:1471)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anon$2.run(AsyncEventQueue.scala:96)
+2025-04-17 16:11:11 [spark-listener-group-shared] ERROR org.apache.spark.util.Utils - throw uncaught fatal error in thread spark-listener-group-shared
+java.lang.InterruptedException: null
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2048)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at org.apache.spark.scheduler.AsyncEventQueue.$anonfun$dispatch$1(AsyncEventQueue.scala:101)
+	at scala.runtime.java8.JFunction0$mcJ$sp.apply(JFunction0$mcJ$sp.java:23)
+	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:62)
+	at org.apache.spark.scheduler.AsyncEventQueue.org$apache$spark$scheduler$AsyncEventQueue$$dispatch(AsyncEventQueue.scala:100)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anon$2.$anonfun$run$1(AsyncEventQueue.scala:96)
+	at org.apache.spark.util.Utils$.tryOrStopSparkContext(Utils.scala:1471)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anon$2.run(AsyncEventQueue.scala:96)
+2025-04-17 16:11:11 [org.apache.hadoop.fs.FileSystem$Statistics$StatisticsDataReferenceCleaner] WARN  org.apache.hadoop.fs.FileSystem - Cleaner thread interrupted, will stop
+java.lang.InterruptedException: null
+	at java.lang.Object.wait(Native Method)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:144)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:165)
+	at org.apache.hadoop.fs.FileSystem$Statistics$StatisticsDataReferenceCleaner.run(FileSystem.java:4021)
+	at java.lang.Thread.run(Thread.java:748)
+2025-04-17 16:11:11 [spark-listener-group-streams] ERROR org.apache.spark.util.Utils - uncaught error in thread spark-listener-group-streams, stopping SparkContext
+java.lang.InterruptedException: null
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2048)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at org.apache.spark.scheduler.AsyncEventQueue.$anonfun$dispatch$1(AsyncEventQueue.scala:101)
+	at scala.runtime.java8.JFunction0$mcJ$sp.apply(JFunction0$mcJ$sp.java:23)
+	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:62)
+	at org.apache.spark.scheduler.AsyncEventQueue.org$apache$spark$scheduler$AsyncEventQueue$$dispatch(AsyncEventQueue.scala:100)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anon$2.$anonfun$run$1(AsyncEventQueue.scala:96)
+	at org.apache.spark.util.Utils$.tryOrStopSparkContext(Utils.scala:1471)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anon$2.run(AsyncEventQueue.scala:96)
+2025-04-17 16:11:11 [Spark Context Cleaner] ERROR org.apache.spark.ContextCleaner - Error in cleaning thread
+java.lang.InterruptedException: null
+	at java.lang.Object.wait(Native Method)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:144)
+	at org.apache.spark.ContextCleaner.$anonfun$keepCleaning$1(ContextCleaner.scala:191)
+	at org.apache.spark.util.Utils$.tryOrStopSparkContext(Utils.scala:1471)
+	at org.apache.spark.ContextCleaner.org$apache$spark$ContextCleaner$$keepCleaning(ContextCleaner.scala:189)
+	at org.apache.spark.ContextCleaner$$anon$1.run(ContextCleaner.scala:79)
+2025-04-17 16:11:11 [spark-listener-group-appStatus] ERROR org.apache.spark.util.Utils - throw uncaught fatal error in thread spark-listener-group-appStatus
+java.lang.InterruptedException: null
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2048)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at org.apache.spark.scheduler.AsyncEventQueue.$anonfun$dispatch$1(AsyncEventQueue.scala:110)
+	at scala.runtime.java8.JFunction0$mcJ$sp.apply(JFunction0$mcJ$sp.java:23)
+	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:62)
+	at org.apache.spark.scheduler.AsyncEventQueue.org$apache$spark$scheduler$AsyncEventQueue$$dispatch(AsyncEventQueue.scala:100)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anon$2.$anonfun$run$1(AsyncEventQueue.scala:96)
+	at org.apache.spark.util.Utils$.tryOrStopSparkContext(Utils.scala:1471)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anon$2.run(AsyncEventQueue.scala:96)
+2025-04-17 16:11:11 [spark-listener-group-executorManagement] ERROR org.apache.spark.util.Utils - throw uncaught fatal error in thread spark-listener-group-executorManagement
+java.lang.InterruptedException: null
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2048)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at org.apache.spark.scheduler.AsyncEventQueue.$anonfun$dispatch$1(AsyncEventQueue.scala:110)
+	at scala.runtime.java8.JFunction0$mcJ$sp.apply(JFunction0$mcJ$sp.java:23)
+	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:62)
+	at org.apache.spark.scheduler.AsyncEventQueue.org$apache$spark$scheduler$AsyncEventQueue$$dispatch(AsyncEventQueue.scala:100)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anon$2.$anonfun$run$1(AsyncEventQueue.scala:96)
+	at org.apache.spark.util.Utils$.tryOrStopSparkContext(Utils.scala:1471)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anon$2.run(AsyncEventQueue.scala:96)
+2025-04-17 16:11:11 [spark-listener-group-streams] ERROR org.apache.spark.util.Utils - throw uncaught fatal error in thread spark-listener-group-streams
+java.lang.InterruptedException: null
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2048)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at org.apache.spark.scheduler.AsyncEventQueue.$anonfun$dispatch$1(AsyncEventQueue.scala:101)
+	at scala.runtime.java8.JFunction0$mcJ$sp.apply(JFunction0$mcJ$sp.java:23)
+	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:62)
+	at org.apache.spark.scheduler.AsyncEventQueue.org$apache$spark$scheduler$AsyncEventQueue$$dispatch(AsyncEventQueue.scala:100)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anon$2.$anonfun$run$1(AsyncEventQueue.scala:96)
+	at org.apache.spark.util.Utils$.tryOrStopSparkContext(Utils.scala:1471)
+	at org.apache.spark.scheduler.AsyncEventQueue$$anon$2.run(AsyncEventQueue.scala:96)
+2025-04-17 16:11:11 [stop-spark-context] INFO  org.apache.spark.SparkContext - SparkContext is stopping with exitCode 0.
+2025-04-17 16:11:11 [stop-spark-context] INFO  org.apache.spark.SparkContext - SparkContext is stopping with exitCode 0.
+2025-04-17 16:11:11 [stop-spark-context] INFO  org.apache.spark.SparkContext - SparkContext is stopping with exitCode 0.
+2025-04-17 16:11:11 [stop-spark-context] INFO  org.apache.spark.SparkContext - SparkContext is stopping with exitCode 0.
+2025-04-17 16:11:11 [stop-spark-context] INFO  org.apache.spark.SparkContext - SparkContext already stopped.
+2025-04-17 16:11:11 [stop-spark-context] INFO  org.apache.spark.SparkContext - SparkContext already stopped.
+2025-04-17 16:11:11 [stop-spark-context] INFO  org.apache.spark.SparkContext - SparkContext already stopped.
+2025-04-17 16:11:11 [stop-spark-context] INFO  o.s.jetty.server.AbstractConnector - Stopped Spark@920ddeb{HTTP/1.1, (http/1.1)}{0.0.0.0:4040}
+2025-04-17 16:11:11 [stop-spark-context] INFO  org.apache.spark.ui.SparkUI - Stopped Spark web UI at http://DESKTOP-HC10M8M.mshome.net:4040
+2025-04-17 16:11:24 [executor-heartbeater] WARN  org.apache.spark.executor.Executor - Issue communicating with driver in heartbeater
+org.apache.spark.SparkException: Exception thrown in awaitResult: 
+	at org.apache.spark.util.ThreadUtils$.awaitResult(ThreadUtils.scala:322)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:75)
+	at org.apache.spark.rpc.RpcEndpointRef.askSync(RpcEndpointRef.scala:101)
+	at org.apache.spark.executor.Executor.reportHeartBeat(Executor.scala:1107)
+	at org.apache.spark.executor.Executor.$anonfun$heartbeater$1(Executor.scala:244)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.util.Utils$.logUncaughtExceptions(Utils.scala:2088)
+	at org.apache.spark.Heartbeater$$anon$1.run(Heartbeater.scala:46)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.spark.SparkException: Could not find HeartbeatReceiver.
+	at org.apache.spark.rpc.netty.Dispatcher.postMessage(Dispatcher.scala:178)
+	at org.apache.spark.rpc.netty.Dispatcher.postLocalMessage(Dispatcher.scala:144)
+	at org.apache.spark.rpc.netty.NettyRpcEnv.askAbortable(NettyRpcEnv.scala:242)
+	at org.apache.spark.rpc.netty.NettyRpcEndpointRef.askAbortable(NettyRpcEnv.scala:554)
+	at org.apache.spark.rpc.netty.NettyRpcEndpointRef.ask(NettyRpcEnv.scala:558)
+	at org.apache.spark.rpc.RpcEndpointRef.askSync(RpcEndpointRef.scala:100)
+	... 12 common frames omitted
+2025-04-17 16:11:26 [stop-spark-context] ERROR o.a.spark.MapOutputTrackerMaster - Error communicating with MapOutputTracker
+java.lang.InterruptedException: null
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedNanos(AbstractQueuedSynchronizer.java:1039)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.tryAcquireSharedNanos(AbstractQueuedSynchronizer.java:1328)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryAwait(Promise.scala:248)
+	at scala.concurrent.impl.Promise$DefaultPromise.ready(Promise.scala:258)
+	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:263)
+	at org.apache.spark.util.ThreadUtils$.awaitResult(ThreadUtils.scala:314)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:75)
+	at org.apache.spark.rpc.RpcEndpointRef.askSync(RpcEndpointRef.scala:101)
+	at org.apache.spark.rpc.RpcEndpointRef.askSync(RpcEndpointRef.scala:85)
+	at org.apache.spark.MapOutputTracker.askTracker(MapOutputTracker.scala:520)
+	at org.apache.spark.MapOutputTracker.sendTracker(MapOutputTracker.scala:530)
+	at org.apache.spark.MapOutputTrackerMaster.stop(MapOutputTracker.scala:1217)
+	at org.apache.spark.SparkEnv.stop(SparkEnv.scala:92)
+	at org.apache.spark.SparkContext.$anonfun$stop$25(SparkContext.scala:2175)
+	at org.apache.spark.util.Utils$.tryLogNonFatalError(Utils.scala:1509)
+	at org.apache.spark.SparkContext.stop(SparkContext.scala:2175)
+	at org.apache.spark.SparkContext.stop(SparkContext.scala:2081)
+	at org.apache.spark.SparkContext$$anon$3.run(SparkContext.scala:2068)
+2025-04-17 16:11:26 [stop-spark-context] ERROR o.a.spark.MapOutputTrackerMaster - Could not tell tracker we are stopping.
+org.apache.spark.SparkException: Error communicating with MapOutputTracker
+	at org.apache.spark.MapOutputTracker.askTracker(MapOutputTracker.scala:524)
+	at org.apache.spark.MapOutputTracker.sendTracker(MapOutputTracker.scala:530)
+	at org.apache.spark.MapOutputTrackerMaster.stop(MapOutputTracker.scala:1217)
+	at org.apache.spark.SparkEnv.stop(SparkEnv.scala:92)
+	at org.apache.spark.SparkContext.$anonfun$stop$25(SparkContext.scala:2175)
+	at org.apache.spark.util.Utils$.tryLogNonFatalError(Utils.scala:1509)
+	at org.apache.spark.SparkContext.stop(SparkContext.scala:2175)
+	at org.apache.spark.SparkContext.stop(SparkContext.scala:2081)
+	at org.apache.spark.SparkContext$$anon$3.run(SparkContext.scala:2068)
+Caused by: java.lang.InterruptedException: null
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedNanos(AbstractQueuedSynchronizer.java:1039)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer.tryAcquireSharedNanos(AbstractQueuedSynchronizer.java:1328)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryAwait(Promise.scala:248)
+	at scala.concurrent.impl.Promise$DefaultPromise.ready(Promise.scala:258)
+	at scala.concurrent.impl.Promise$DefaultPromise.result(Promise.scala:263)
+	at org.apache.spark.util.ThreadUtils$.awaitResult(ThreadUtils.scala:314)
+	at org.apache.spark.rpc.RpcTimeout.awaitResult(RpcTimeout.scala:75)
+	at org.apache.spark.rpc.RpcEndpointRef.askSync(RpcEndpointRef.scala:101)
+	at org.apache.spark.rpc.RpcEndpointRef.askSync(RpcEndpointRef.scala:85)
+	at org.apache.spark.MapOutputTracker.askTracker(MapOutputTracker.scala:520)
+	... 8 common frames omitted
+2025-04-17 16:11:26 [stop-spark-context] ERROR org.apache.spark.SparkContext - java.lang.NoClassDefFoundError: org/apache/spark/storage/BlockInfoWrapper
+java.lang.BootstrapMethodError: java.lang.NoClassDefFoundError: org/apache/spark/storage/BlockInfoWrapper
+	at org.apache.spark.storage.BlockInfoManager.clear(BlockInfoManager.scala:518)
+	at org.apache.spark.storage.BlockManager.stop(BlockManager.scala:2054)
+	at org.apache.spark.SparkEnv.stop(SparkEnv.scala:95)
+	at org.apache.spark.SparkContext.$anonfun$stop$25(SparkContext.scala:2175)
+	at org.apache.spark.util.Utils$.tryLogNonFatalError(Utils.scala:1509)
+	at org.apache.spark.SparkContext.stop(SparkContext.scala:2175)
+	at org.apache.spark.SparkContext.stop(SparkContext.scala:2081)
+	at org.apache.spark.SparkContext$$anon$3.run(SparkContext.scala:2068)
+Caused by: java.lang.NoClassDefFoundError: org/apache/spark/storage/BlockInfoWrapper
+	... 8 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.apache.spark.storage.BlockInfoWrapper
+	at org.codehaus.mojo.exec.URLClassLoaderBuilder$ExecJavaClassLoader.loadClass(URLClassLoaderBuilder.java:198)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 8 common frames omitted
