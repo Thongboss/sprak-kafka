@@ -1,11 +1,9 @@
 version: '3.8'
-
 services:
   zookeeper:
     image: confluentinc/cp-zookeeper:7.4.0
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
-      ZOOKEEPER_TICK_TIME: 2000
     ports:
       - "2181:2181"
 
@@ -19,15 +17,13 @@ services:
     environment:
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_CREATE_TOPICS: "demo-topic:1:1"
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,EXTERNAL://localhost:29092
       KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092,EXTERNAL://0.0.0.0:29092
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,EXTERNAL:PLAINTEXT
-      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
-      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
 
   spark-master:
     image: bitnami/spark:3.4
-    container_name: spark-master
     environment:
       - SPARK_MODE=master
     ports:
@@ -38,18 +34,28 @@ services:
     image: bitnami/spark:3.4
     depends_on:
       - spark-master
+      - kafka
+    user: root
     volumes:
-      - ./target:/target:ro
+      - ./target/kafka-spark-streaming-1.0-SNAPSHOT.jar:/opt/app/app.jar:ro
       - ./output:/app/output
     environment:
-      JAVA_TOOL_OPTIONS: -Duser.home=/tmp
-      SPARK_JARS_IVY: /tmp/.ivy2
-    entrypoint: >
-      sh -c "
-        echo '>> Checking JAR file:' && ls -lh /target && \
-        /opt/bitnami/spark/bin/spark-submit \
-          --master spark://spark-master:7077 \
-          --deploy-mode client \
-          --class com.example.StreamingApp \
-          /target/kafka-spark-streaming-1.0-SNAPSHOT.jar
-      "
+      JAVA_TOOL_OPTIONS: "-Duser.home=/tmp"
+      SPARK_JARS_IVY: "/tmp/.ivy2"
+    command:
+      - /opt/bitnami/spark/bin/spark-submit
+      - --master
+      - spark://spark-master:7077
+      - --deploy-mode
+      - client
+      - --packages
+      - org.apache.spark:spark-sql-kafka-0-10_2.12:3.4.0
+      - --conf
+      - spark.jars.ivy=/tmp/.ivy2
+      - --conf
+      - spark.sql.catalogImplementation=in-memory
+      - --conf
+      - spark.sql.warehouse.dir=/app/output/warehouse
+      - --class
+      - com.example.StreamingApp
+      - /opt/app/app.jar
